@@ -1,0 +1,60 @@
+# Indian IT Stocks vs Nifty 50
+
+An analysis of how four major Indian IT stocks (TCS, Infosys, Wipro, HCLTech) have performed against the Nifty 50 benchmark over the last 3 years.
+
+## Tools used
+
+- **Python**
+- **yfinance**: downloads historical market data from Yahoo Finance
+- **pandas**: cleans and analyses the data
+- **matplotlib**: draws the charts
+- **Jupyter**: notebooks for step-by-step analysis
+
+## Setup
+
+```bash
+# 1. Create a virtual environment
+python -m venv venv
+
+# 2. Activate it
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # macOS / Linux
+
+# 3. Install the dependencies
+pip install -r requirements.txt
+
+# 4. Open the notebooks
+jupyter notebook
+```
+
+## Project structure
+
+```
+01_data_collection.ipynb   Phase 1 notebook
+data/                      Cleaned price data (CSV)
+charts/                    Saved charts
+requirements.txt           Exact package versions
+```
+
+## Phase 1: Data collection
+
+Notebook: [`01_data_collection.ipynb`](01_data_collection.ipynb)
+
+- Downloads 3 years of daily **adjusted** closing prices for `TCS.NS`, `INFY.NS`, `WIPRO.NS`, `HCLTECH.NS` and the Nifty 50 (`^NSEI`). Adjusted prices account for splits, bonus issues and dividends.
+- Checks the data for gaps and fills missing values with **forward-fill** (the last known price), which avoids inventing prices or using future data.
+- Saves the cleaned data to `data/it_stocks_clean.csv` (745 trading days, Oct 2023 – Oct 2026).
+- Plots each price series over time and saves the result to `charts/price_history.png`.
+
+![Price history](charts/price_history.png)
+
+## Phase 2: _Coming soon_
+
+_TBD_
+
+## Phase 3: _Coming soon_
+
+_TBD_
+
+## Key findings
+
+_To be added after the analysis phases._
